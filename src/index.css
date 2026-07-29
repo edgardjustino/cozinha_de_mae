@@ -8,6 +8,7 @@
   --cinza-leitura: #1f2937;    /* Cor escura e confortável para textos */
   --cinza-suave: #4b5563;
   --cor-fundo: #fefaf6;        /* Fundo creme bem suave */
+  
 }
 
 /* --------------------------------------------------------
@@ -23,6 +24,13 @@
 body {
   background-color: var(--cor-fundo);
   color: var(--cinza-leitura);
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 /* --------------------------------------------------------
@@ -81,10 +89,17 @@ body {
    -------------------------------------------------------- */
 section {
   padding: 60px 5%;
-  max-width: 1200px;
-  margin: 0 auto;
+  width: 100%; /* Permite que seções como o banner ocupem a tela toda */
   text-align: center;
 }
+
+/* Isso garante que a história e os produtos continuem centralizados e elegantes, sem esticar demais */
+#sobre, #produtos {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
 
 .secao-banner h1 {
   font-size: 3rem;
