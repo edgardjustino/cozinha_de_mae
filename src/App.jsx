@@ -3,6 +3,8 @@ import Papa from 'papaparse';
 
 // Importando a imagem do logo que salvamos na pasta assets
 import logoImg from './assets/logo_cdm.jpeg';
+import marineteImg from './assets/marinete_cozinha_de_mae.jpeg'; 
+
 
 const PLANILHA_URL = 'https://docs.google.com/spreadsheets/d/1HO1dakdasiqNO2ge7BrhY2qSxC1kpMmhRBxEdMz37hw/gviz/tq?tqx=out:csv';
 
@@ -73,12 +75,28 @@ function App() {
 </section>
 
         {/* Seção Sobre */}
-        <section id="sobre" className="secao-texto">
-          <h2>Nossa História 💚</h2>
-          <p>
-            O Projeto Cozinha de Mãe, liderado pela Marinete na Rocinha, transforma frutas e alimentos de excelente qualidade, que seriam descartados por questões estéticas, em geleias deliciosas e bolos fofinhos.
-          </p>
-        </section>
+        {/* Seção Sobre */}
+<section id="sobre" className="secao-texto">
+  <div className="sobre-layout">
+    <div className="sobre-conteudo">
+      <h2>Nossa História 💚</h2>
+      <p>
+        O <strong>Projeto Cozinha de Mãe</strong>, liderado pela paixão da Dona Marinete na Rocinha, nasce com o propósito de unir o afeto da culinária caseira à sustentabilidade. 
+      </p>
+      <p>
+        Nós damos uma nova vida a frutas e alimentos de excelente qualidade que seriam descartados pelo comércio convencional por questões estéticas, transformando-os em geleias deliciosas, bolos fofinhos e doces cheios de sabor.
+      </p>
+      <p>
+        Cada receita é única, feita de forma totalmente artesanal e sem conservantes. Ao comprar um de nossos produtos, você apoia diretamente a nossa comunidade, estimula a economia circular local e ajuda a reduzir o desperdício de comida no planeta!
+      </p>
+    </div>
+    
+    <div className="sobre-imagem-container">
+      {/* Exibe a foto real da Dona Marinete */}
+      <img src={marineteImg} alt="Dona Marinete na Cozinha" className="sobre-foto" />
+    </div>
+  </div>
+</section>
 
         {/* Seção Produtos (A vitrine que lê a planilha) */}
         <section id="produtos" className="secao-produtos">

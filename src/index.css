@@ -223,12 +223,70 @@ section {
 
 /* --- FIM DOS ESTILOS DO INÍCIO --- */
 
-.secao-texto h2 {
-  font-size: 2rem;
-  color: var(--verde-escuro);
-  margin-bottom: 15px;
+/* --------------------------------------------------------
+   ESTILOS DA SEÇÃO SOBRE (Nossa História)
+   -------------------------------------------------------- */
+.sobre-layout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+  text-align: left; /* Alinhamento do texto à esquerda */
+  width: 100%;
 }
 
+.sobre-conteudo {
+  flex: 1.2; /* Dá um pouco mais de espaço para o texto */
+}
+
+.sobre-conteudo h2 {
+  font-size: 2.5rem;
+  color: var(--verde-escuro);
+  margin-bottom: 20px;
+}
+
+.sobre-conteudo p {
+  font-size: 1.1rem;
+  color: var(--cinza-suave);
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.sobre-imagem-container {
+  flex: 1; 
+  display: flex;
+  justify-content: center;
+}
+
+/* Moldura e efeitos para a foto da Dona Marinete */
+.sobre-foto {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(58, 99, 58, 0.15); /* Sombra usando o verde oficial */
+  border: 6px solid #ffffff; /* Moldura branca */
+  transform: rotate(-1.5deg); /* Leve inclinação */
+  transition: transform 0.3s ease;
+}
+
+.sobre-foto:hover {
+  transform: rotate(0deg) scale(1.02); /* Desinclina e dá zoom ao passar o mouse */
+}
+
+/* Responsividade: Garante que no celular o texto e a foto fiquem empilhados */
+@media (max-width: 768px) {
+  .sobre-layout {
+    flex-direction: column;
+    gap: 30px;
+    text-align: center; /* Centraliza tudo no celular */
+  }
+  
+  .sobre-foto {
+    max-width: 280px;
+    transform: rotate(0deg); /* Remove a inclinação para economizar espaço */
+  }
+}
 /* --------------------------------------------------------
    VITRINE DE PRODUTOS (Cards)
    -------------------------------------------------------- */
@@ -260,12 +318,14 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden; /* <-- CERTIFIQUE-SE DE QUE ISSO ESTÁ AQUI (esconde o que passar das bordas arredondadas) */
 }
 
 .produto-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; /* <-- ESTA É A PROPRIEDADE MÁGICA! */
+  object-position: center; /* Garante que o corte seja feito mantendo o centro da foto sempre visível */
 }
 
 .sem-foto {
